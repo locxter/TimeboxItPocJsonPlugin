@@ -57,7 +57,8 @@ function mountPage(container:HTMLElement,api:PluginApi):void {
   const label=document.createElement('label');label.textContent='Calendar JSON file';
   const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.setAttribute('aria-label','Calendar JSON file');
   const status=document.createElement('p');status.className='status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
-  try {const count=savedEvents(api.state).length;status.textContent=count?`${count} ${count===1?'event':'events'} imported.`:'No events imported yet.';} catch {status.textContent='Saved data could not be read. Import the file again.';status.classList.add('error');}
+  const showSavedState=()=>{try{const count=savedEvents(api.state).length;status.classList.remove('error');status.textContent=count?`${count} ${count===1?'event':'events'} imported.`:'No events imported yet.';}catch{status.textContent='Saved data could not be read. Import the file again.';status.classList.add('error');}};
+  showSavedState();container.addEventListener('pluginstatechange',showSavedState);
   const button=document.createElement('button');button.type='button';button.textContent='Import events';button.disabled=true;
   input.addEventListener('change',()=>{button.disabled=!input.files?.length;});
   button.addEventListener('click',()=>{void (async()=>{
