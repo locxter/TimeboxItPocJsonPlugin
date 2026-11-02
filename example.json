@@ -1,0 +1,15 @@
+[
+  {
+    "id": "appointment-1",
+    "title": "Project planning",
+    "start": "2026-11-02T09:00:00+01:00",
+    "end": "2026-11-02T10:00:00+01:00",
+    "allDay": false
+  },
+  {
+    "id": "appointment-2",
+    "title": "Team workshop",
+    "start": "2026-11-03T10:30:00+01:00",
+    "end": "2026-11-03T12:00:00+01:00"
+  }
+]

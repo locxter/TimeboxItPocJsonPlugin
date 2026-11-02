@@ -1,0 +1,12 @@
+{
+  "manifest": {
+    "apiVersion": 1,
+    "id": "example.json-calendar",
+    "name": "JSON Calendar",
+    "kind": "calendar",
+    "settings": [],
+    "ui": { "page": true }
+  },
+  "entry": "src/index.ts",
+  "networkOrigins": []
+}
