@@ -34,21 +34,25 @@ function mountPage(container:HTMLElement,api:PluginApi):void {
   style.textContent=`
     :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#364356}
     .importer{display:grid;gap:12px;font-size:14px;line-height:1.5}
-    .importer h2{margin:0;font-size:15px;line-height:1.3;color:#25344a}
-    .importer p{margin:0;color:#65768b;font-size:13px}
-    .importer label{font-size:12px;font-weight:650;color:#586b82}
-    .importer input{width:100%;max-width:100%;font:inherit;font-size:16px;color:#586b82}
-    .importer input::file-selector-button{border:1px solid #d5e0ed;border-radius:7px;background:#f5f8fc;color:#365b8b;padding:8px 10px;margin-right:9px;font:inherit;font-size:13px;cursor:pointer}
-    .importer button{justify-self:start;border:0;border-radius:7px;background:#527bb2;color:white;padding:10px 15px;font:inherit;font-size:13px;font-weight:650;cursor:pointer}
-    .importer button:disabled{opacity:.45;cursor:not-allowed}
+    .importer h2{margin:0;font-size:15px;line-height:1.35;color:#25344a}
+    .importer p{margin:0;color:#586b82;font-size:13px;line-height:1.5}
+    .importer label{margin-top:4px;font-size:12px;font-weight:650;color:#586b82}
+    .importer input{display:block;width:100%;min-width:0;padding:5px;border:1px solid #d5e0ed;border-radius:8px;background:#f8fafd;color:#53667e;font:inherit;font-size:12px}
+    .importer input::file-selector-button{border:0;border-radius:5px;background:#e6eef8;color:#315986;padding:9px 10px;margin-right:9px;font:inherit;font-weight:650;cursor:pointer}
+    .importer input::file-selector-button:hover{background:#dbe8f7}
+    .importer button{justify-self:start;border:0;border-radius:7px;background:#527bb2;color:#fff;padding:10px 15px;font:inherit;font-size:13px;font-weight:650;cursor:pointer}
+    .importer button:hover:not(:disabled){background:#3b6195}
+    .importer button:disabled{opacity:.55;cursor:not-allowed}
     .importer :focus-visible{outline:2px solid #527bb2;outline-offset:3px}
-    .importer .status{min-height:1.5em;color:#4b6f9b;overflow-wrap:anywhere}
-    .importer .status.error{color:#a84c46}
-    [data-theme="dark"] :root,[data-theme="dark"]{color:#e8eef7}
+    .importer .status{min-height:1.5em;color:#526c8e;overflow-wrap:anywhere}
+    .importer .status.error{color:#a43f39}
+    [data-theme="dark"]{color:#e8eef7}
     [data-theme="dark"] .importer h2{color:#e8eef7}
-    [data-theme="dark"] .importer p,[data-theme="dark"] .importer label,[data-theme="dark"] .importer input{color:#c2cddd}
-    [data-theme="dark"] .importer input::file-selector-button{background:#303947;border-color:#526177;color:#e2ecfb}
-    [data-theme="dark"] .importer .status{color:#a8c9f5}
+    [data-theme="dark"] .importer p,[data-theme="dark"] .importer label{color:#c2cddd}
+    [data-theme="dark"] .importer input{background:#20252d;border-color:#526177;color:#d1dbea}
+    [data-theme="dark"] .importer input::file-selector-button{background:#394a60;color:#e2ecfb}
+    [data-theme="dark"] .importer input::file-selector-button:hover{background:#475f7d}
+    [data-theme="dark"] .importer .status{color:#b7d1f3}
     [data-theme="dark"] .importer .status.error{color:#ffb4a7}
   `;
   const section=document.createElement('section');section.className='importer';
